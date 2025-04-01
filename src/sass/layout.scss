@@ -1,0 +1,27 @@
+@use 'foundations/destyle.css';
+@use 'foundations/base-project' as *;
+@use 'foundations/base' as *;
+@use 'foundations/vars';
+@use '@/sass/global' as *;
+
+.l-container {
+  box-sizing: content-box;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @include pc {
+    max-width: 64rem;
+  }
+  &.--narrow {
+    @include pc {
+      max-width: 37.3333333333rem;
+    }
+    @media (min-width: 64em) {
+      // 1024px
+      max-width: 40.3333333333rem;
+    }
+    @media (min-width: 80em) {
+      // 1280px
+      max-width: 51rem;
+    }
+  }
+}

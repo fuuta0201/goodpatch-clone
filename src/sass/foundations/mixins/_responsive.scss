@@ -1,0 +1,26 @@
+@use 'sass:math';
+
+$breakPoint: 768px;
+
+@mixin pc {
+  @media ($breakPoint < width) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media (width <= $breakPoint) {
+    @content;
+  }
+}
+
+.u-pc {
+  @include sp {
+    display: none !important;
+  }
+}
+.u-sp {
+  @include pc {
+    display: none !important;
+  }
+}
